@@ -24,10 +24,15 @@ RUN cd /data/ && gemini load --cores 4 -v chr22NoInacessible.vcf chr22.db
 
 #EXPOSE 8088
 
-RUN apt-get update && apt-get install -y python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev
+RUN apt-get update && apt-get install -y python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev libcrypto++6 libssl-dev
 RUN pip install puzzle
-
 #EXPOSE 5000
 
+# INSTALLING HTSLIB
+#RUN cd /usr/bin/ && wget https://github.com/samtools/htslib/releases/download/1.10.2/htslib-1.10.2.tar.bz2
+#RUN cd /usr/bin/ && tar -vxjf htslib-1.10.2.tar.bz2 && cd htslib-1.10.2 && make && make install
+#RUN cd /usr/bin/ && wget https://github.com/samtools/bcftools/releases/download/1.10.2/bcftools-1.10.2.tar.bz2 && tar -vxjf bcftools-1.10.2.tar.bz2 && cd bcftools-1.10.2 && make && make install
+
 #no entrypoint for now just run command line to start
-ENTRYPOINT gemini browser /data/chr22.db --use builtin
+#ENTRYPOINT gemini browser /data/chr22.db --use builtin
+ENTRYPOINT puzzle load /data/chr22.db && puzzle view
