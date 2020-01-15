@@ -45,7 +45,7 @@ docker build . -t assignment
 
 # Querying the database
 
-Once the image is built, you can run the container and query the database using the GEMINI SQL the command line:
+Once the image is built, you can run the container and query the SQL database using GEMINI:
 
 ```bash
 # interactive session
@@ -68,7 +68,7 @@ GEMINI comes with a graphical interface, to start it run
 ```bash
 \#sudo
 docker run -it assignment:latest /bin/bash
-# contsiner prompt
+# container prompt
 gemini browser /data/chr22.db --use builtin
 ```
 
