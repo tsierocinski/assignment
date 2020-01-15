@@ -66,7 +66,7 @@ docker run assignment:latest -c "gemini query -q \"select * from variants limit 
 GEMINI comes with a graphical interface, to start it run
 
 ```bash
-\#sudo
+#sudo
 docker run -it assignment:latest /bin/bash
 # container prompt
 gemini browser /data/chr22.db --use builtin
