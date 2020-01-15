@@ -75,3 +75,16 @@ gemini browser /data/chr22.db --use builtin
 A web interface is then be available on http://localhost:8088 or replace 'localhost' by your local network ip.
 
 
+# GEMINI API
+
+GEMINI comes also with an API that can be queried suing python, see here https://gemini.readthedocs.io/en/latest/content/api.html
+
+
+```bash
+# sudo
+docker run -it --rm assignment:latest /bin/bash
+#inside docker prompt
+#start python
+python
+# see example in Gemini's documentation (link above) for a query example 
+```
