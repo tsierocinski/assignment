@@ -67,7 +67,7 @@ GEMINI comes with a graphical interface, to start it run
 
 ```bash
 #sudo
-docker run -it assignment:latest /bin/bash
+docker run -it -p 8088:8088 assignment:latest /bin/bash
 # container prompt
 gemini browser /data/chr22.db --use builtin
 ```
